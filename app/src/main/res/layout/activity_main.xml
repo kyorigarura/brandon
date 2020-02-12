@@ -37,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="2018/bit/057/ps"
+
         android:textSize="20sp"
 
         tools:layout_editor_absoluteX="113dp"
