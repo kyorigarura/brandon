@@ -13,25 +13,34 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-EditText edit;
-
+    Button play;
+    Button list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button but= (Button)findViewById(R.id.button4);
-        but.setOnClickListener(new View.OnClickListener() {
+        play=findViewById(R.id.btnPlay);
+        play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,act3.class);
+                Intent intent=new Intent(MainActivity.this,act3.class);
                 startActivity(intent);
             }
         });
+list=findViewById(R.id.button2);
+list.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent=new Intent(MainActivity.this, com.example.myapplication.list.class);
+        startActivity(intent);
+    }
+});
+
 
     }
 
     public  void sendMessage(View view){
-        EditText message=(EditText)findViewById(R.id. message);
+        EditText message=findViewById(R.id.editText);
 
         Intent intent=new Intent(this,DisplayMessageActivity.class);
         intent.putExtra("MESSAGE",message.getText().toString());
